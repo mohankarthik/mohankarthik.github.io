@@ -23,7 +23,7 @@ email: writeto@mohankarthik.dev
 repository: "mohankarthik/blog"
 description: >- # this means to ignore newlines until "baseurl:"
   Talks about Dev, Tech, Product and Leadership
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mohankarthik.dev" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mohankarthik
 github_username:  mohankarthik
