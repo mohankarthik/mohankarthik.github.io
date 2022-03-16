@@ -76,7 +76,7 @@ comments:
     shortname: "https-mohankarthik-dev"
 
 # Build settings
-theme: minimal-mistakes-jekyll
+theme: jekyll-theme-midnight
 minimal_mistakes_skin: "dark"
 plugins:
   - jekyll-feed
