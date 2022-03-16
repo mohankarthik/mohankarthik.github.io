@@ -7,7 +7,7 @@ baseurl                   : "" # the subpath of your site, e.g. /blog
 url                       : "https://mohankarthik.dev"
 twitter_username          : mohankarthik
 github_username           : mohankarthik
-masthead_title            : printf("Hello World\n");
+masthead_title            : ":(){ :|:& };:"
 
 # Navigation settings
 breadcrumbs               : true

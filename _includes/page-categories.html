@@ -1,0 +1,7 @@
+{% if page.categories %}
+  <p class="page__tag"><strong><i class="fas fa-fw fa-list-alt" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Categories:" }}</strong>
+    {% for category in page.categories %}
+      <a href="{{ site.url }}/categories/#{{ category }}">{{ category }}</a>
+    {% endfor %}
+  </p>
+{% endif %}

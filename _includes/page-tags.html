@@ -1,0 +1,7 @@
+{% if page.tags %}
+  <p class="page__tag"><strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Tags:" }}</strong>
+    {% for tag in page.tags %}
+      <a href="{{ site.url }}/tags/#{{ tag }}">{{ tag }}</a>
+    {% endfor %}
+  </p>
+{% endif %}

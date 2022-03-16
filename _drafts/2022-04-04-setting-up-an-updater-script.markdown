@@ -35,3 +35,7 @@ pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n
 npm install -g npm # Updates npm itself
 npm update -g # Updates all the npm global packages
 ```
+
+With these setup, now you can go forth and let your inner deamon rest. 
+
+If any of you have better ways to keep your system updated, please do post in the comments.
