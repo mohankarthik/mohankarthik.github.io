@@ -2,7 +2,8 @@
 layout: single
 title:  "Path Planning in Highways for an Autonomous Vehicle"
 date:   2017-07-31 10:00:00 +0530
-categories: machine-learning autonomous-vehicles
+categories: engineering
+tags: machine-learning autonomous-vehicles
 ---
 
 This article is the write up for my Path Planning project for Term 3, of the Udacity’s Self Driving Car NanoDegreee. The entire article assumes knowledge of how the [Udacity Term 3 simulator](https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2) works.

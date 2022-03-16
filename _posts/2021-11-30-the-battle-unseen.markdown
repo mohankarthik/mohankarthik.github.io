@@ -3,6 +3,7 @@ layout: single
 title:  "The Battle Unseen"
 date:   2021-11-30 10:00:00 +0530
 categories: travel
+tags: philosophy
 ---
 
 For eons, a battle has raged between two mighty forces. The likes of which has never been penned in any fiction nor reminisced in any myth. The likes of which dwarfs the epic battles of our cinemas and novels and make them look like fairy tales. And yet, this battle has all but been oblivious to us “five sensed” earthlings, us who see, yet are blind; who hear and yet are deaf.

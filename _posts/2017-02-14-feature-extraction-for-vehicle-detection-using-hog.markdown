@@ -1,8 +1,9 @@
 ---
-layout: single
-title:  "Feature extraction for Vehicle Detection using HOG+"
-date:   2017-02-14 10:00:00 +0530
-categories: machine-learning autonomous-vehicles
+layout      : single
+title       : "Feature extraction for Vehicle Detection using HOG+"
+date        : 2017-02-14 10:00:00 +0530
+categories  : engineering
+tags        : machine-learning automous-vehicles
 ---
 This is how I went about doing the Vehicle Detection project (P5) from Term 1 of the Udacity’s Self Driving Car Nanodegree program. The goals / steps of this project are the following:
 * Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier

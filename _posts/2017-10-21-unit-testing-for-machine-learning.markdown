@@ -2,7 +2,8 @@
 layout: single
 title:  "Unit Testing for Machine Learning"
 date:   2017-10-21 10:00:00 +0530
-categories: machine-learning
+categories: engineering
+tags: machine-learning
 ---
 
 Would love to share a [great article](https://medium.com/@keeper6928/how-to-unit-test-machine-learning-code-57cf6fd81765) that I read today.
