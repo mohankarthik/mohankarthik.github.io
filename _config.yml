@@ -32,6 +32,29 @@ github_username:  mohankarthik
 breadcrumbs: true
 search: true
 
+# Author Profile
+author:
+  name: "Mohan Karthik"
+  avatar: "/assets/images/karthik.webp"
+  bio: "Talks about Dev, Tech, Product and Leadership" # Note: Markdown is allowed
+  location: "Bengaluru, India"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/mohankarthik/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/mohankarthik"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mohankarthik"
+    - label: "Reddit"
+      icon: "fab fa-fw fa-reddit"
+      url: "https://www.reddit.com/user/mohankarthik"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/mohankarthik"
+
 # Defaults
 defaults:
   # _posts
@@ -42,6 +65,8 @@ defaults:
       show_date: true
       read_time: true
       comments: true
+      author_profile: true
+      share: true
 date_format: "%Y-%m-%d"
 
 # Disqus config
