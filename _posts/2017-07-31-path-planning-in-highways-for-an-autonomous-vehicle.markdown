@@ -33,15 +33,15 @@ So the three factors that we mentioned in the problem statement are covered here
 The method I took to rank lanes are using the following 3 factors
 1. The lesser the number of lanes we need to change, the better. Because the lesser we change lanes, the more comfortable the drive is for the passengers (takes care of comfort)
 
-![Lane Change Score](/assets/images/2017-07-31-01.webp)
+![Lane Change Score](/assets/images/2017-07-31-01.webp){: .align-center}
 
 2. The distance of the car ahead of us in that lane. The more the distance, the better the score
 
-![Distance Score](/assets/images/2017-07-31-02.webp)
+![Distance Score](/assets/images/2017-07-31-02.webp){: .align-center}
 
 3. The velocity of the car ahead of us in that lane. The greater the velocity, the faster we can travel in that lane, before being forced to change lane again.
 
-![Velocity Score](/assets/images/2017-07-31-03.webp)
+![Velocity Score](/assets/images/2017-07-31-03.webp){: .align-center}
 
 Note:
 1. If a particular lane does not have any car ahead of us, then it would get the full score of the corresponding weights for velocity & distance scores.
@@ -50,7 +50,7 @@ Note:
 ## Feasibility Checks
 Now that we’ve ranked the lanes, we now need to check if transition to that lane is feasible or not! This is done with the following flow.
 
-![Feasibility Flow](/assets/images/2017-07-31-04.webp)
+![Feasibility Flow](/assets/images/2017-07-31-04.webp){: .align-center}
 1. Loop across the lanes in the order from best to worst lane.
 1. If the currently looped lane is our current lane, then nothing to do, everything is great, keep moving, break the loop.
 1. If not, then check if the new lane would be jerk & collision feasible. The sections below explain how this is done.
@@ -83,7 +83,7 @@ During testing the system, once two other cars in front of ours collided and cam
 
 ## Results
 The resulting video is the following
-[![Result](https://img.youtube.com/vi/PqbAUjUfMCo/0.jpg)](https://www.youtube.com/watch?v=PqbAUjUfMCo)
+[![Result](https://img.youtube.com/vi/PqbAUjUfMCo/0.jpg)](https://www.youtube.com/watch?v=PqbAUjUfMCo){: .align-center}
 
 ## Future Work
 

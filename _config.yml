@@ -1,23 +1,27 @@
 # Basic information
 title                     : Mohan Karthik
 email                     : writeto@mohankarthik.dev
-repository                : "mohankarthik/blog"
+repository                : "mohankarthik/mohankarthik.github.io"
 description               : Talks about Dev, Tech, Product and Leadership
 baseurl                   : "" # the subpath of your site, e.g. /blog
 url                       : "https://mohankarthik.dev"
 twitter_username          : mohankarthik
 github_username           : mohankarthik
 masthead_title            : ":(){ :|:& };:"
+subtitle                  : "Google Fork bomb if you don't understand the above code. Don't use it directly!!"
 
 # Navigation settings
 breadcrumbs               : true
 breadcrumb_home_label     : "Start"
-breadcrumb_separator      : ">"
 search                    : true
 
 # Data
 include:
   - _pages
+
+# Pagination
+paginate: 5
+paginate_path: /page:num/
 
 # Author Profile
 author:
@@ -49,11 +53,20 @@ defaults:
       path: ""
       type: posts
     values:
-      show_date: true
+      layout: single
+      author_profile: true
       read_time: true
       comments: true
-      author_profile: true
       share: true
+      related: true
+      show_date: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+
 date_format: "%Y-%m-%d"
 
 # Disqus config
@@ -75,3 +88,41 @@ minimal_mistakes_skin: "dark"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-sitemap
+
+# Performance
+compress_html:
+  clippings: all
+  ignore:
+    envs: development 
+
+# Social
+twitter:
+  username: "mohankarthik"
+og_image: /assets/images/karthik.webp
+social:
+  type:  Person
+  name:  Mohan Karthik
+  links:
+    - "https://twitter.com/mohankarthik"
+    - "https://instagram.com/mohankarthik"
+    - "https://www.linkedin.com/in/mohankarthik"
+
+# Footer
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/mohankarthik/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/mohankarthik"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mohankarthik"
+    - label: "Reddit"
+      icon: "fab fa-fw fa-reddit"
+      url: "https://www.reddit.com/user/mohankarthik"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/mohankarthik"
