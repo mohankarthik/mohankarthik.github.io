@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Introduction to Automotive Networks"
-date:   2022-03-03 10:00:00 +0530
+date:   2022-04-03 10:00:00 +0530
 categories: engineering
 tags: embedded automotive networks ethernet
 toc: true
