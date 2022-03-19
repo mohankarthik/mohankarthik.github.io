@@ -17,7 +17,7 @@ This article will cover the first two steps.
 
 ## Visualizing the data
 The first step always is to see what we’ve got. And here is the data from Udacity. Some examples of cars and non-cars that we’ve are
-![Car/Non-Car Image Data](/assets/images/2017-02-14-01.webp){: .align-center}
+![Car/Non-Car Image Data](/assets/images/2017-02-14/01.webp){: .align-center}
 
 Some things to note here are that each image is a 64x64. And there are about 8k images of each type. Which considering that the background class is pretty much everything other than car, I guess is a pretty small image set.
 
@@ -35,16 +35,16 @@ In terms of choosing the parameters, we’ve two major rationales. One is speed,
 
 ## Visualizing the parameters
 Once again the shortcut is to visualize the parameters to get an intuition of how they work.
-![RGB Cars Color Histogram](/assets/images/2017-02-14-02.webp){: .align-center}
-![RGB Non-Cars Color Histogram](/assets/images/2017-02-14-03.webp){: .align-center}
+![RGB Cars Color Histogram](/assets/images/2017-02-14/02.webp){: .align-center}
+![RGB Non-Cars Color Histogram](/assets/images/2017-02-14/03.webp){: .align-center}
 
 We can see that for the RGB color space, all the 3 channels give us a very different spectrum across the histogram. So this looks good.
-![YCbCr Cars Color Histogram](/assets/images/2017-02-14-04.webp){: .align-center}
-![YCbCr Non-Cars Color Histogram](/assets/images/2017-02-14-05.webp){: .align-center}
+![YCbCr Cars Color Histogram](/assets/images/2017-02-14/04.webp){: .align-center}
+![YCbCr Non-Cars Color Histogram](/assets/images/2017-02-14/05.webp){: .align-center}
 
 Here, the Y channel gives a good difference, but the Cb and the Cr channels look almost similar. So does not look like a good choice.
-![HSV Cars Color Histogram](/assets/images/2017-02-14-06.webp){: .align-center}
-![HSV Non-Cars Color Histogram](/assets/images/2017-02-14-07.webp){: .align-center}
+![HSV Cars Color Histogram](/assets/images/2017-02-14/06.webp){: .align-center}
+![HSV Non-Cars Color Histogram](/assets/images/2017-02-14/07.webp){: .align-center}
 
 Here, we see a decent difference in S and V channel, but not much in the H channel. So maybe in terms of color histogram, RGB and the S & V channel of HSV are looking good.
 
@@ -60,17 +60,17 @@ The combinations used here are
 1. Orientations = 8, Pixel per cell = (16,16), cells per block = 1
 1. Orientations = 9, Pixel per cell = (16,16), cells per block = 1
 
-![HOG parameters](/assets/images/2017-02-14-08.webp){: .align-center}
+![HOG parameters](/assets/images/2017-02-14/08.webp){: .align-center}
 
 The first option looks great! Nice clear markings for the car image, and a clear difference between the car and non-car image
 
 Now let’s look at the color spaces within HOG
 
-![HOG YCbCr](/assets/images/2017-02-14-09.webp){: .align-center}
+![HOG YCbCr](/assets/images/2017-02-14/09.webp){: .align-center}
 
-![HOG RGB](/assets/images/2017-02-14-10.webp){: .align-center}
+![HOG RGB](/assets/images/2017-02-14/10.webp){: .align-center}
 
-![HOG HSV](/assets/images/2017-02-14-11.webp){: .align-center}
+![HOG HSV](/assets/images/2017-02-14/11.webp){: .align-center}
 
 We get almost the same result as we got in the color histogram, which is a great reaffirmation for the data. The YCbCr gives a differential performance only for the Y channel. Whereas all 3 channels in RGB gives us a difference. The Hue in HSV is almost similar, but the S and V show a nice difference.
 

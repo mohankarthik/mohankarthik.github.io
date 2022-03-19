@@ -1,0 +1,14 @@
+{
+  "name": "mohankarthik.dev",
+  "version": "1.0.0",
+  "description": "A blog",
+  "main": "index.html",
+  "repository": "git@github.com:mohankarthik/mohankarthik.github.io.git",
+  "author": "Mohan Karthik <nemesis.nitt@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "develop": "bundle exec jekyll serve --drafts --livereload --incremental",
+    "build": "JEKYLL_ENV=production bundle exec jekyll build "
+  }
+}
