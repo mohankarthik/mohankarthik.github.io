@@ -12,13 +12,13 @@ Since our planet first matured, the mountains have grown tall and proud. Even to
 
 As the sun shone it’s light and warmth on these tall mastiffs, the snow melted down and from there came the water streams. The mountains cared little for the tiny rivulets, as they did nothing more than to add to their proud beauty. As these streams, Brookes and rivulets met, they slowly gave rise to formidable rivers that thundered down these mountains. Even then the mountains cared little for they were confident in their tenacity and their strength. Who among this earth could ever change those majestic mountains, those that were made of earth and stone, those that could host entire forests on their slopes and those that could tower over even the clouds and look down upon the rest of the earth.
 
-![The Sleeping Buddha](/assets/images/2021-11-30-01.webp){: .align-center}
+![The Sleeping Buddha](/assets/images/2021-11-30/01.webp){: .align-center}
 
 And yet the mountains failed to account that their off-springs would be just as tenacious and persevering as they themselves. The rivers were the great equalizers, and they wanted to chart a course through these tall peaks and level the field. And yet they knew that their objective wasn’t easy. They knew that the gallant and daunting mountains were not easy subjects who would bend to their wills. And so they persevered. At each turn, the rivers would try chipping away at the smallest bit of the mountain. They would fail a million times before they succeeded. And yet they knew that they only had to keep trying until they succeeded.
 
 And thus began the longest battle that our planet has known. Mountains, who grew ever so slowly and aimed to persevere, and rivers that slowly tried to chip away at the mountains and level them. Who will win this battle is no longer relevant, as we unfortunately wouldn’t be here to witness the end. But there is much to learn from these two titans.
 
-![Stream](/assets/images/2021-11-30-02.webp){: .align-center}
+![Stream](/assets/images/2021-11-30/02.webp){: .align-center}
 
 The mountains achieve their purpose through being gentle, patient and unmoving. They see the rivers chipping at them, and it would be easy for them to look at their losses and assume that eventually the rivers would beat them down, and yet they don’t lose hope. They stand tall, proud and steady. They persevere.
 
