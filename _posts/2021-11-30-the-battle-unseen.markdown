@@ -2,7 +2,7 @@
 layout: single
 title:  "The Battle Unseen"
 date:   2021-11-30 10:00:00 +0530
-categories: travel
+categories: leadership
 tags: philosophy
 ---
 
