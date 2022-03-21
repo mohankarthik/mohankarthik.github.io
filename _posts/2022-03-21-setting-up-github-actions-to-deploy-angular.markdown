@@ -29,6 +29,7 @@ Depending on the configuration, GitHub would simply create a new container (usin
 To create a new GitHub workflow, you create a `.github` folder in the root of your project and then a `workflows` folder. Within this folder, you can add a `<name>.yml` to define your workflow / pipeline. Below is the code that you can directly use, and then we'll break it down.
 
 Note the below config uses `yarn` but you can replace it with `npm` if that's your package manager.
+{% raw %}
 ```
 name: <name>
 on:
@@ -83,12 +84,14 @@ jobs:
           aws configure set preview.cloudfront true
           aws cloudfront create-invalidation --distribution-id ${{ env.CDN_DISTRIBUTION_ID }} --paths "/*"
 ```
+{% endraw %}
 
 Let's break the above down
 
 ## Triggers
 This [page](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows) contains detailed information, and summarizing the most used triggers
 
+{% raw %}
 ```
 on:
   push:
@@ -101,6 +104,8 @@ on:
       - reopened # When a PR is re-opened
       - synchronize # When a PR is updated
 ```
+{% endraw %}
+
 The above are your conventional triggers. So if you want to build and deploy anytime you push / merge to a branch (say the main / master). This is what we do in our original example. If you want to build each time a pull request is updated, so you get to test the bleeding edge work, then you can trigger it on pull_request -> types -> opened, synchronized. 
 
 ## Choosing the Runner
@@ -108,15 +113,19 @@ In the above example, we use `ubuntu-latest`. This could be the default choice f
 
 ## Naming the Job
 A job has a name
+{% raw %}
 ```
 jobs:
   <name>:
     name: <name>
 ```
+{% endraw %}
+
 Pretty straightforward. Everyone has a name! It's just cruel to be nameless!
 
 ## Defining environment variables
 It's a good idea to always defining common variables in once place, so you can easily use them in multiple places. Same as [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+{% raw %}
 ```
     env:
       NODE_VERSION: '<Node version number>'
@@ -124,6 +133,8 @@ It's a good idea to always defining common variables in once place, so you can e
       CDN_DISTRIBUTION_ID: <cloudfront ID>
       AWS_REGION: <aws region>
 ```
+{% endraw %}
+
 In this case, let's also define what these variables are.
 * NODE_VERSION: This is straight forward. Simply put the node version that you've locally used to build the project. Also ensure to keep this aligned with your local version, so you don't get surprises when you deploy
 * S3_BUCKET: This is the name of the S3 bucket. Typically you want a name that is unique. In my case it would be `dev.mohankarthik.xxx` and since I own `mohankarthik.dev`, the naming convention becomes unique for me.
@@ -136,15 +147,19 @@ This is where the money is. Now let's dive in.
 Each step has an `name` and either `uses` or `run`. `uses` essentially uses an existing module directly with no work from us. How cool is that. We get small open-source tasks to run and get us what we want. You can see the list of all existing actions [here](https://github.com/marketplace?type=actions).
 
 ### Checkout the code
+{% raw %}
 ```
       - name: Checkout the code
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 ```
+{% endraw %}
+
 This piece of code basically checks your code out into the machine that's building the code. `fetch-depth` being set to 0 basically means that it will do a shallow pull, only the current commit and not the entire history.
 
 ### Installing node
+{% raw %}
 ```
       - name: Install node
         uses: actions/setup-node@v2
@@ -155,13 +170,17 @@ This installs the node version that you've specified in the env. For other frame
 
 ### Caching
 This is a really cool feature of GitHub (and many other CI/CD tools too). GitHub Actions will save all the dependencies (the infamous `node_modules` folder) into memory, and then the next time you run your workflow, it'll restore the local version before trying to get it from the internet. Which will speed up the whole build significantly.
+{% raw %}
 ```
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 ```
+{% endraw %}
+
 The above part gets the directory where the cache will get stored and sets it as the yarn cache directory
 
+{% raw %}
 ```
       - name: Cache the dependencies
         uses: actions/cache@v2
@@ -172,26 +191,35 @@ The above part gets the directory where the cache will get stored and sets it as
           restore-keys: |
             ${{ runner.os }}-yarn-
 ```
+{% endraw %}
+
 This is the part that actually caches all the dependencies after the first install. You can update this to your language of choice by changing the cache directory to where your framework / language will store the dependencies. `.pub-cache` for flutter, `.m2` for maven, etc...
 
 ### Install dependencies
 This part is simple
+{% raw %}
 ```
       - name: yarn install
         run: yarn --prefer-offline
 ```
+{% endraw %}
+
 Call a console command to install all dependencies by calling `yarn` or `npm install`. You can do similar for other languages like `pip install -r requirements.txt`, etc...
 
 This part will also automatically fetch from the cache specified ahead instead of fetching from internet if the cache already has data.
 
 ### Build
+{% raw %}
 ```
       - name: build
         run: <your yarn command to build your site>
 ```
+{% endraw %}
+
 Simple as it is. Call the command line that you want to build the project. And can be customized for the language / framework of choice
 
 ### Deploying to AWS
+{% raw %}
 ```
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -200,8 +228,11 @@ Simple as it is. Call the command line that you want to build the project. And c
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: {{ env.AWS_REGION }}
 ```
+{% endraw %}
+
 Before we get to this section, we'll need to setup an IAM account on AWS dedicated for this GitHub workflow. It's generally a good idea to not use the same IAM account for multiple purposes, so create one just for this. Copy the Key ID and Access Key to GitHub Settings -> Secrets (the url would be something like `https://github.com/<organization>/<repository>/settings/secrets/actions`). This will then be accessible to the workflow in run time using the above script.
 
+{% raw %}
 ```
       - name: deploy
         run: |
@@ -210,6 +241,8 @@ Before we get to this section, we'll need to setup an IAM account on AWS dedicat
           aws configure set preview.cloudfront true
           aws cloudfront create-invalidation --distribution-id ${{ env.CDN_DISTRIBUTION_ID }} --paths "/*"
 ```
+{% endraw %}
+
 This is the code that actually pushes the built distributable onto AWS. 
 * In this case the first line deletes the existing content on S3 so it's a clean slate. 
 * Then the second line copies the entire website content to the S3 bucket. While doing so, it adds headers onto each object so that the browser fetching these information will cache it efficiently.
