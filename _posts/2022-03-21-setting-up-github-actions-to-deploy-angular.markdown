@@ -25,6 +25,9 @@ Github actions can be triggered by many actions
 
 Depending on the configuration, GitHub would simply create a new container (using very similar concepts to Docker) and do the job that you specify. The job could be anything. You could create a GitHub action to print "Hello World!". Which is a nice way to test out things and get yourself comfortable with the idea.
 
+# Structure of the GitHub workflow file
+A GitHub workflow file is basically a YAML file and follows the [YAML syntax](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html). This [page](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) provides an excellent reference for how the GitHub syntax is structured. If you are interested to learn the basics, please go through this before proceeding.
+
 # GitHub action to deploy Javascript code
 To create a new GitHub workflow, you create a `.github` folder in the root of your project and then a `workflows` folder. Within this folder, you can add a `<name>.yml` to define your workflow / pipeline. Below is the code that you can directly use, and then we'll break it down.
 
@@ -89,7 +92,7 @@ jobs:
 Let's break the above down
 
 ## Triggers
-This [page](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows) contains detailed information, and summarizing the most used triggers
+This [page](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows) contains detailed information. In summary,  the most conventional triggers used are as follows:
 
 {% raw %}
 ```
@@ -121,7 +124,7 @@ jobs:
 ```
 {% endraw %}
 
-Pretty straightforward. Everyone has a name! It's just cruel to be nameless!
+Pretty straightforward. Everyone has a name (except if you are [Arya Stark](https://www.youtube.com/watch?v=TgXlQlOrSx8))! It's just cruel to be nameless!
 
 ## Defining environment variables
 It's a good idea to always defining common variables in once place, so you can easily use them in multiple places. Same as [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
@@ -166,6 +169,7 @@ This piece of code basically checks your code out into the machine that's buildi
         with:
           node-version: ${{ env.NODE_VERSION }}
 ```
+{% endraw %}
 This installs the node version that you've specified in the env. For other frameworks / languages, change to the approrpriate setup. There are many [existing actions](https://github.com/marketplace?type=actions&query=setup+) to help setup other languages.
 
 ### Caching
