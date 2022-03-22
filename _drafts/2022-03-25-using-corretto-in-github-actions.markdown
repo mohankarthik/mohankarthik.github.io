@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Using Corretto on GitHub Action"
-date:   2022-03-21 10:00:00 +0530
+date:   2022-03-25 10:00:00 +0530
 categories: engineering
 tags: devops github-actions java corretto
 toc: true

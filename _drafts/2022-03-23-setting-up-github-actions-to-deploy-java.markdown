@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Setting up GitHub Actions to Deploy JAVA code on Elastic Beanstalk"
-date:   2022-03-21 10:00:00 +0530
+date:   2022-03-23 10:00:00 +0530
 categories: engineering
 tags: devops github-actions aws maven java corretto
 toc: true
