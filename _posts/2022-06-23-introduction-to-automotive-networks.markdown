@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "Introduction to Automotive Networks"
-date:   2022-04-03 10:00:00 +0530
+date:   2022-06-23 10:00:00 +0530
 categories: engineering
 tags: embedded automotive networks ethernet
 toc: true
@@ -14,13 +14,13 @@ As this revolution happens, a silent, albiet very powerful upgrade has been happ
 ## Evolution of the Electronic Control Unit (ECU)
 An ECU is a small computer in your car that is responsible for controlling a specific feature (say brakes, traction control, steering, etc...). Over the years, the number of ECUs in the car have exploded from a few 10s of ECUs to more than 100s of ECUs in each car. No longer are these crucial components mechanically controlled. The original car used to have a brake pedal connected to the brake piston via brake fluid and transmits the pressure on the brake pedal to the brake pads to bring the car to a stop.
 
-![Mechanical brakes](/assets/images/2022-04-03/2022-04-03-mechanical-braking.webp){: .align-center}
+![Mechanical brakes](/assets/images/2022-06-23/2022-06-23-mechanical-braking.webp){: .align-center}
 Mechanical braking - [Image credit](https://projectsgeek.com/2020/03/mechanical-braking-system-project.html)
 {: .text-center}
 
 Now, no more; when you press the brake pedal, a sensor ECU now collects the pressure on the pedal, encodes it into a message and sends it to another ECU that controls the brakes. The recieving ECU processes the incoming message, and then actuates not just the brakes, but the powertrain too to bring the car to a stop!
 
-![Electric brakes](/assets/images/2022-04-03/2022-04-03-electric-brake.webp){: .align-center}
+![Electric brakes](/assets/images/2022-06-23/2022-06-23-electric-brake.webp){: .align-center}
 Audi e-tron's electronic braking - [Image credit](https://www.autoevolution.com/news/what-is-brake-by-wire-and-how-it-works-150856.html)
 {: .text-center}
 
@@ -29,19 +29,19 @@ Thanks to the speed at which features are being added into automobiles, pretty m
 
 The following image shows the different major electronic systems in the car. And this is still a very bird's eye view and misses showing many of the sub-systems that exists.
 
-![ECUs in a car ](/assets/images/2022-04-03-electonic-components-in-car.webp){: .align-center}
+![ECUs in a car ](/assets/images/2022-06-23/2022-06-23-electonic-components-in-car.webp){: .align-center}
 ECUs in a car - [Image credit](https://autotechdrive.com/electronic-control-unit/)
 {: .text-center}
 
 Thanks to this, the average number of ECUs in the car has been growing exponentially. A lot more due to the disruption by non traditional OEMs such as Telsa, Rivian, etc...
 
-![Average ECUs in a car](/assets/images/2022-04-03-average-ecus-in-car.webp){: .align-center}
+![Average ECUs in a car](/assets/images/2022-06-23/2022-06-23-average-ecus-in-car.webp){: .align-center}
 Average ECUs in a car - [Image credit](https://www.greencarcongress.com/2015/07/20150729-berger.html)
 {: .text-center}
 
 And with this, the market has also been expanding rapidly.
 
-![ECU market](/assets/images/2022-04-03/2022-04-03-average-ecu-market.webp){: .align-center}
+![ECU market](/assets/images/2022-06-23/2022-06-23-average-ecu-market.webp){: .align-center}
 ECU market - [Image credit](https://www.marketsandmarkets.com/Market-Reports/automotive-ecu-market-34863602.html)
 {: .text-center}
 
@@ -55,7 +55,7 @@ This division is historical and has started merging into a single entity lately.
 ## Control plane
 The control plane is primarily focused on getting sensor data to actuators.
 
-![Sensor-Controller-Actuator](/assets/images/2022-04-03/2022-04-03-sensor-controller-actuator.webp){: .align-center}
+![Sensor-Controller-Actuator](/assets/images/2022-06-23/2022-06-23-sensor-controller-actuator.webp){: .align-center}
 Sensor - Controller - Actuator - [Image credit](https://www.geeksforgeeks.org/actuators-in-iot/)
 {: .text-center}
 
@@ -75,11 +75,11 @@ As opposed to the control plane, the networks in the media plane is focused on b
 ## Automotive Networks
 Now that we've detailed out the two planes, let's look at the various different automotive network protocols that exist in cars today. 
 
-![Automotive Networks](/assets/images/2022-04-03/2022-04-03-automotive-networks.webp){: .align-center}
+![Automotive Networks](/assets/images/2022-06-23/2022-06-23-automotive-networks.webp){: .align-center}
 Automotive Networks - [Image credit](https://standards.ieee.org/wp-content/uploads/import/documents/other/d1-03_matheus_evolution_of_ethernet_based_automotive_networks.pdf)
 {: .text-center}
 
-![Automotive Networks in cars](/assets/images/2022-04-03/2022-04-03-automotive-networks-in-car.webp){: .align-center}
+![Automotive Networks in cars](/assets/images/2022-06-23/2022-06-23-automotive-networks-in-car.webp){: .align-center}
 Automotive Networks in car - [Image credit](https://silvaco.com/blog/design-ip-for-automotive-socs-trends-and-solutions/)
 {: .text-center}
 
