@@ -27,31 +27,22 @@ An AI can write a Python script to parse a file because it has seen a million ex
 
 ### The Automotive Ghost: Toyota's Unintended Acceleration
 
-{:refdef: style="text-align: center;"}
-![Toyota](/assets/images/2025-08-01/Toyota.webp)
-{: refdef}
-
-{:refdef: style="text-align: center;"}
-[Source](https://www.csmonitor.com/USA/2010/0226/Report-Rogue-car-acceleration-is-not-just-a-Toyota-problem)
-{: refdef}
-
+![Toyota](/assets/images/2025-08-01/Toyota.webp){: .align-center}
+[Source](https://www.csmonitor.com/USA/2010/0226/Report-Rogue-car-acceleration-is-not-just-a-Toyota-problem){: .text-center}
 
 For years, Toyota faced reports of its cars accelerating without driver input. The initial blame was placed on floor mats. The real culprit, however, was a ghost in the machine. [Expert testimony in court cases](https://www.google.com/search?q=https://www.safetyresearch.net/blog/articles/toyota-unintended-acceleration-and-big-bowl-%25E2%2580%259Cspaghetti%25E2%2580%259D-code) revealed critical flaws in the engine control unit's firmware. The issues weren't simple bugs; they were complex system failures like **stack overflow**, where memory management fails and causes unpredictable behavior. Critical tasks could be disabled by other tasks, and the code was riddled with thousands of global variables, creating a "spaghetti code" nightmare. An AI could not have debugged this. It required engineers with a deep understanding of real-time operating systems, memory management, and safety-critical coding standards (like MISRA C) to painstakingly trace the complex interactions that could lead to the throttle control system failing in an unsafe state.
 
 ### The Consumer Nightmare: Bricking a Smart Device
 
-{:refdef: style="text-align: center;"}
-![Nest](/assets/images/2025-08-01/nest.webp)
-
-[Source](https://www.amazon.in/Nest-Learning-Thermostat-Generation-Office/dp/B01M65EKLG)
-{: refdef}
+![Nest](/assets/images/2025-08-01/nest.webp){: .align-center}
+[Source](https://www.amazon.in/Nest-Learning-Thermostat-Generation-Office/dp/B01M65EKLG){: .text-center}
 
 In 2016, a faulty firmware update rendered thousands of [Nest smart thermostats unresponsive](https://www.google.com/search?q=https://www.nytimes.com/2016/01/14/fashion/nest-thermostat-glitch-leaves-users-in-the-cold.html), effectively "bricking" them in the middle of winter. The problem wasn't a server outage; it was a deep-seated embedded bug. The issue was reportedly a flaw in the device's sleep/wake algorithm. When the device woke for routine tasks, the bug sometimes prevented it from returning to a proper low-power state, causing the battery to drain completely. Once drained, the device couldn't function or even recharge itself. This is a classic embedded problem. An AI might write a sleep algorithm, but debugging it requires measuring micro-amps of current with an oscilloscope, understanding the power state transitions of every component on the board, and correlating that physical data with the software's execution. It's a perfect blend of hardware and software detective work.
 
 ### The Rocket's Billion-Dollar Typo: Ariane 5
 
-![Ariane 5](/assets/images/2025-08-01/ariane5.webp)
-{: .align-center}[Source](https://hackaday.com/2016/06/30/fail-of-the-week-in-1996-the-7-billion-dollar-overflow/){: .text-center}
+![Ariane 5](/assets/images/2025-08-01/ariane5.webp){: .align-center}
+[Source](https://hackaday.com/2016/06/30/fail-of-the-week-in-1996-the-7-billion-dollar-overflow/){: .text-center}
 
 One of the most famous software failures in history was the explosion of the Ariane 5 rocket just 40 seconds into its maiden flight in 1996\. The cause was a single, catastrophic software error detailed in the [official inquiry board report](https://www.esa.int/Newsroom/Press_Releases/Ariane_501_-_Presentation_of_Inquiry_Board_report). Engineers had reused code from the slower Ariane 4 rocket that converted a 64-bit floating-point number representing the rocket's horizontal velocity into a 16-bit signed integer. On the faster Ariane 5, the velocity value was much larger than the Ariane 4's, and the number became too big for the 16-bit integer to hold. This caused an **integer overflow**, which the system interpreted as a flight path error. The rocket's software did exactly what it was told to do with the bad data: it swiveled the nozzles to "correct" the non-existent problem, causing the rocket to veer off course and self-destruct. An AI, without the full system context, might see the data conversion code as correct in isolation. It took human engineers to understand the *new physical constraints* of the Ariane 5 and realize that the reused code was no longer valid.
 
